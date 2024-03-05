@@ -7,10 +7,11 @@ import toast from "react-hot-toast";
 
 const Cart = ({ posts, loading, checkoutHandler, openMeta, defaultAccount }) => {
   const { cart } = useSelector((state) => state);
-  console.log("Printing Cart");
-  console.log(cart);
+  // console.log("Printing Cart");
+  // console.log(cart);
   const [totalAmount, setTotalAmount] = useState(0);
-  const [succesfull, setSuccesfull] = useState(false);
+  // const [successful, setSuccessful] = useState(false);
+  let successfull=false;
 
   useEffect(() => {
     setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
@@ -19,6 +20,9 @@ const Cart = ({ posts, loading, checkoutHandler, openMeta, defaultAccount }) => 
   useEffect(() => {
     openMeta();
   }, []);
+
+
+
 
   async function sendTransaction() {
     const totalAmountInEther = ethers.parseUnits(totalAmount.toString(), 'ether');
@@ -33,22 +37,38 @@ const Cart = ({ posts, loading, checkoutHandler, openMeta, defaultAccount }) => 
         method: "eth_sendTransaction",
         params: [transactionObject],
       });
-      setSuccesfull(true);
-      console.log("Transaction hash:", result);
+
+      
+      let receipt = null;
+      while (receipt === null) {
+        receipt = await window.ethereum.request({
+          method: "eth_getTransactionReceipt",
+          params: [result],
+        });
+        await new Promise(resolve => setTimeout(resolve, 1000)); 
+      }
+
+      
+      console.log("Transaction completed");
+      // setSuccessful(true);
+      successfull=true;
+      console.log("setSuccessful set to true");
     } catch (error) {
       console.error("Error sending transaction:", error);
     }
   }
 
+
+  
+
   async function Handlerevery() {
-    await sendTransaction();
-    setTimeout(() => {
+    await sendTransaction(); 
+    console.log("if its true ujwjal");
+    console.log(successfull); 
+    if (successfull) {
       toast.success("Success");
       checkoutHandler();
-    }, 10000);
-    
-
-
+    }
   }
 
   return (

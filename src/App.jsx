@@ -25,6 +25,7 @@ const App = () => {
   };
 
   const checkoutHandler = () => {
+    console.log("checkoutHandler is Running")
     cart.forEach((item) => {
       dispatch(remove(item.id));
       removeFromHomepage(item.id);

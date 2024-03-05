@@ -16,7 +16,7 @@ export const products = [
     id: 1,
     title: "Rose",
     color: "Red",
-    price: 0.8,
+    price: 0.000001,
     description: "Symbol of love and passion",
     image: rose
   },
@@ -24,7 +24,7 @@ export const products = [
     id: 2,
     title: "Tulip",
     color: "Yellow",
-    price: 0.05,
+    price: 0.000001,
     description: "Signifies perfect love",
     image: tulip
   },
@@ -32,7 +32,7 @@ export const products = [
     id: 3,
     title: "Lily",
     color: "White",
-    price: 0.5,
+    price: 0.000001,
     description: "Symbolizes purity and virtue",
     image: lily
   },
@@ -40,7 +40,7 @@ export const products = [
     id: 4,
     title: "Sunflower",
     color: "Yellow",
-    price: 0.75,
+    price: 0.000002,
     description: "Represents adoration and loyalty",
     image: sunflower
   },
@@ -48,7 +48,7 @@ export const products = [
     id: 5,
     title: "Daisy",
     color: "White",
-    price: 0.2,
+    price: 0.000003,
     description: "Symbol of purity and innocence",
     image: logo
   },
@@ -56,7 +56,7 @@ export const products = [
     id: 6,
     title: "Orchid",
     color: "Purple",
-    price: 0.74,
+    price: 0.000002,
     description: "Signifies luxury and beauty",
     image: orchid
   },
@@ -64,7 +64,7 @@ export const products = [
     id: 7,
     title: "Carnation",
     color: "Pink",
-    price: 0.3,
+    price: 0.000001,
     description: "Symbolizes love and fascination",
     image: carnation
   },
@@ -72,7 +72,7 @@ export const products = [
     id: 8,
     title: "Hydrangea",
     color: "Blue",
-    price: 0.99,
+    price: 0.000001,
     description: "Represents gratitude and heartfelt emotions",
     image: hydrangea
   },
@@ -80,7 +80,7 @@ export const products = [
     id: 9,
     title: "Peony",
     color: "Pink",
-    price: 0.99,
+    price: 0.000001,
     description: "Symbolizes romance and prosperity",
     image: peony
   },
@@ -88,7 +88,7 @@ export const products = [
     id: 10,
     title: "Chrysanthemum",
     color: "Various",
-    price: 0.45,
+    price: 0.000001,
     description: "Represents longevity and joy",
     image: chry
   },
